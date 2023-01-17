@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import timeBg from '../../../assest/images/timebg.jpg'
 import clockbg from '../../../assest/images/clock.jpg'
 
 const LeftSideCard = () => {
@@ -10,7 +9,7 @@ const LeftSideCard = () => {
   }, []);
 
   return (
-    
+
        <div
       className="hero"
       style={{ backgroundImage: `url(${clockbg})`, height: "250px"}}
