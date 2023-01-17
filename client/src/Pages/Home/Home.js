@@ -1,9 +1,10 @@
 import React from 'react';
+import Statistics from '../Statistics/Statistics';
 
 const Home = () => {
     return (
         <div>
-            home
+            <Statistics/>
         </div>
     );
 };
