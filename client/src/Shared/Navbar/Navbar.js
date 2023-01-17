@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-import React from "react";
 
-const Navbar = () => {
-  return (
-    <div>
-      <h1>navbar</h1>
-    </div>
-  );
-};
-
-export default Navbar;
-=======
 import React, { useState } from 'react'
 
 const Navbar = () => {
@@ -207,4 +195,4 @@ const Navbar = () => {
 }
 
 export default Navbar
->>>>>>> 00a0220bcdb30db4cea47c5e32acf42938656722
+
