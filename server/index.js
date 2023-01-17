@@ -63,7 +63,7 @@ async function run() {
 run().catch(console.log);
 
 app.get('/', async (req, res) => {
-    res.send('doctors portal server is running');
+    res.send('jobStack server is running');
 })
 
-app.listen(port, () => console.log(`Doctors portal running on ${port}`))
+app.listen(port, () => console.log(`jobStack running on ${port}`))
