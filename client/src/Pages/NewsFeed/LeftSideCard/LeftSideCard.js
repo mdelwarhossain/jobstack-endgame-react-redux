@@ -10,27 +10,8 @@ const LeftSideCard = () => {
   }, []);
 
   return (
-    // <div>
-    //    <div>
-    //    <p>
-    //       {' '}
-    //       {dateState.toLocaleDateString('en-GB', {
-    //          day: 'numeric',
-    //          month: 'short',
-    //          year: 'numeric',
-    //       })}
-    //     </p>
-    //    </div>
-    //    <div>
-    //    {dateState.toLocaleString('en-US', {
-    //         hour: 'numeric',
-    //         minute: 'numeric',
-    //         hour12: true,
-    //     })}
-    //    </div>
-    // </div>
-
-    <div
+    
+       <div
       className="hero"
       style={{ backgroundImage: `url(${clockbg})`, height: "250px"}}
     >
