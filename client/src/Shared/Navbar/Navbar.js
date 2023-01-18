@@ -1,17 +1,16 @@
-
-import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider';
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Navbar = () => {
-  const { logOut, user } = useContext(AuthContext)
+  const { logOut, user } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSignout = () => {
     logOut()
-      .then(() => { })
-      .catch(error => console.log(error))
-  }
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="bg-gray-900  ">
       <div className="mx-auto px-4 py-4 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -22,7 +21,6 @@ const Navbar = () => {
             title="Company"
             className="inline-flex items-center"
           >
-
             <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
               JobStack
             </span>
@@ -42,7 +40,7 @@ const Navbar = () => {
             </li>
             <li>
               <a
-                href="/"
+                href="/newsfeed"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -70,7 +68,6 @@ const Navbar = () => {
                 About us
               </a>
             </li>
-
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
@@ -83,11 +80,15 @@ const Navbar = () => {
                 Log in
               </a> */}
             </li>
-            {
-              user?.email ?
-                <button className='btn btn-white' onClick={handleSignout}>SignOut</button>
-                : <Link className='btn text-white' to="/login">Log In</Link>
-            }
+            {user?.email ? (
+              <button className="btn btn-white" onClick={handleSignout}>
+                SignOut
+              </button>
+            ) : (
+              <Link className="btn text-white" to="/login">
+                Log In
+              </Link>
+            )}
           </ul>
           <div className="lg:hidden">
             <button
@@ -122,7 +123,6 @@ const Navbar = () => {
                         title="Company"
                         className="inline-flex items-center"
                       >
-
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           Company
                         </span>
@@ -148,7 +148,7 @@ const Navbar = () => {
                     <ul className="space-y-4">
                       <li>
                         <a
-                          href="/"
+                          href="/newsfeed"
                           aria-label="Our product"
                           title="Our product"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -196,11 +196,18 @@ const Navbar = () => {
                           Log in
                         </a>
                       </li>
-                      {
-                        user?.email ?
-                          <button className='btn text-white' onClick={handleSignout}>SignOut</button>
-                          : <Link className='btn text-white' to="/login">Log In</Link>
-                      }
+                      {user?.email ? (
+                        <button
+                          className="btn text-white"
+                          onClick={handleSignout}
+                        >
+                          SignOut
+                        </button>
+                      ) : (
+                        <Link className="btn text-white" to="/login">
+                          Log In
+                        </Link>
+                      )}
                     </ul>
                   </nav>
                 </div>
@@ -210,8 +217,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
-
+export default Navbar;
