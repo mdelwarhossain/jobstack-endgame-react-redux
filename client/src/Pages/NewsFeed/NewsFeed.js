@@ -1,5 +1,6 @@
 import React from "react";
 import Courses from "./LeftSideCard/Courses/Courses";
+import CreatePost from "./CreatePost/CreatePost";
 import LeftSideCard from "./LeftSideCard/LeftSideCard";
 import Sponsored from "./LeftSideCard/Sponsored/Sponsored";
 import './NewsFeed.css'
@@ -12,8 +13,8 @@ const NewsFeed = () => {
       <Courses></Courses>
       <Sponsored></Sponsored>
      </div>
-     <div className="bg-green-200">
-      <p>Newsfeed</p>
+     <div className="">
+      <CreatePost></CreatePost>
      </div>
      <div className="bg-red-200">
       <p>rightSidebar</p>
