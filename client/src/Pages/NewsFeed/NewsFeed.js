@@ -1,4 +1,5 @@
 import React from "react";
+import CreatePost from "./CreatePost/CreatePost";
 import LeftSideCard from "./LeftSideCard/LeftSideCard";
 import './NewsFeed.css'
 
@@ -8,8 +9,8 @@ const NewsFeed = () => {
      <div className="bg-slate-200">
       <LeftSideCard></LeftSideCard>
      </div>
-     <div className="bg-green-200">
-      <p>Newsfeed</p>
+     <div className="">
+      <CreatePost></CreatePost>
      </div>
      <div className="bg-red-200">
       <p>rightSidebar</p>
