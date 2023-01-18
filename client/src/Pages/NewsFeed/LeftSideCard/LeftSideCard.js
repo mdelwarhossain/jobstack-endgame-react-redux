@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import clockbg from '../../../assest/images/clock.jpg'
+import clockbg from "../../../assest/images/clock.jpg";
 
 const LeftSideCard = () => {
   const [dateState, setDateState] = useState(new Date());
@@ -9,30 +9,21 @@ const LeftSideCard = () => {
   }, []);
 
   return (
-
-       <div
-      className="hero"
-      style={{ backgroundImage: `url(${clockbg})`, height: "250px"}}
-    >
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-2xl font-bold">
-          {dateState.toLocaleString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: true,
+    <div className="text-center shadow-xl mb-5" style={{backgroundImage: `url(${clockbg})`,height:"350px"}}>
+      <h1 className="pt-60 mb-2 text-3xl font-extrabold">
+        {dateState.toLocaleString("en-US", {
+          hour: "numeric",
+          minute: "numeric",
+          hour12: true,
         })}
-          </h1>
-          <p className="mb-5">
-          {dateState.toLocaleDateString('en-GB', {
-             day: 'numeric',
-             month: 'short',
-             year: 'numeric',
-          })}
-          </p>
-        </div>
-      </div>
+      </h1>
+      <p className=" font-extrabold">
+        {dateState.toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        })}
+      </p>
     </div>
   );
 };
