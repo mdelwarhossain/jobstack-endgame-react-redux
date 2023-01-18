@@ -27,11 +27,11 @@ const AuthProvider = ({ children }) => {
   };
 
   const providerLogin = (provider) => {
-    return signInWithPopup(auth.currentUser, provider);
+    return signInWithPopup(auth, provider);
   };
 
   const updateUser = (userInfo) => {
-    return updateProfile(user, userInfo);
+    return updateProfile(auth.currentUser, userInfo);
   };
 
   const logOut = () => {
