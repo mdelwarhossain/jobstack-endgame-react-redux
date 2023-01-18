@@ -21,12 +21,12 @@ const router = createBrowserRouter([
         element: <NewsFeed></NewsFeed>,
       },
       {
-        path:'/login',
-        element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-        path:'/signup',
-        element:<SignUp></SignUp>
+        path: '/signup',
+        element: <SignUp></SignUp>
       }
     ],
   },
