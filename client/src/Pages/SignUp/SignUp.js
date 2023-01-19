@@ -10,23 +10,43 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { createUser, updateUser, providerLogin } = useContext(AuthContext);
+
+    const imageHostKey = process.env.ba471f7eede8c79f24d4ac1e497f2df3;
+    console.log(imageHostKey);
+
     const [signUpError, setSignUPError] = useState('');
     const navigate = useNavigate();
 
     const handleSignUp = (data) => {
-        console.log(data);
+        // console.log(data.image[0]);
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?&key=${imageHostKey}`
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imgData => {
+                if (imgData.success) {
+                    console.log(imgData.data.url);
+                }
+
+            })
+
         setSignUPError('');
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
 
                 const userInfo = {
                     displayName: data.name
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.phone);
                     })
                     .catch(err => console.log(err));
                 // toast.success('please login with email and password')
@@ -38,8 +58,8 @@ const SignUp = () => {
                 setSignUPError(error.message)
             });
     }
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, phone) => {
+        const user = { name, email, phone };
 
         fetch('http://localhost:5000/users', {
             method: 'POST',
@@ -50,7 +70,7 @@ const SignUp = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('save user', data);
+                // console.log('save user', data);
                 // navigate('/');
                 toast.success('please login with email and password')
                 navigate('/login')
@@ -61,7 +81,7 @@ const SignUp = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
             })
             .catch(error => console.error(error))
         toast.success('please login with google');
@@ -96,6 +116,33 @@ const SignUp = () => {
                         })} className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
                     </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="label-text">Phone number</span></label>
+                        <input type="password" {...register("phone", {
+                            required: "Phone number is required",
+                            minLength: { value: 9, message: "phone number must be 9 characters long" },
+                            pattern: {}
+                        })} className="input input-bordered w-full max-w-xs" />
+
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-5">
+                        {/* <label className="label"> <span className="label-text">Specialty</span></label> */}
+                        <select
+                            {...register('option')}
+                            className="select select-bordered w-full max-w-xs">
+
+                            <option>JobSeeker </option>
+                            <option>Recruiter</option>
+                        </select>
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"> <span className="label-text">Photo</span></label>
+                        <input type="file" {...register("image", {
+                            required: "Photo is Required"
+                        })} className="input input-bordered w-full max-w-xs" />
+                        {errors.img && <p className='text-red-500'>{errors.img.message}</p>}
+                    </div>
+
                     <input className='btn btn-accent w-full mt-4' value="Sign Up" type="submit" />
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </form>
