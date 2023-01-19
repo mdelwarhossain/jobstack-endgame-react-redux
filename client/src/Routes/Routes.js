@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 
 
 import NewsFeed from "../Pages/NewsFeed/NewsFeed";
+import Notification from "../Pages/Notification/Notification";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignUp></SignUp>
-      }
+      },
+      {
+        path: '/notification',
+        element: <Notification></Notification>
+      },
     ],
   },
 
