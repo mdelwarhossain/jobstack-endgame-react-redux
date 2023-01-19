@@ -29,7 +29,8 @@ const SignUp = () => {
                         saveUser(data.name, data.email);
                     })
                     .catch(err => console.log(err));
-                toast.success('please login')
+                // toast.success('please login with email and password')
+                // navigate('/login')
 
             })
             .catch(error => {
@@ -51,6 +52,7 @@ const SignUp = () => {
             .then(data => {
                 console.log('save user', data);
                 // navigate('/');
+                toast.success('please login with email and password')
                 navigate('/login')
             })
     }
@@ -62,6 +64,8 @@ const SignUp = () => {
                 console.log(user);
             })
             .catch(error => console.error(error))
+        toast.success('please login with google');
+        navigate('/login')
     }
 
     return (
