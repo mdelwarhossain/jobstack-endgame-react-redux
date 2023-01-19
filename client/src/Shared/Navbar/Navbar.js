@@ -30,7 +30,7 @@ const Navbar = () => {
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
               <a
-                href="/"
+                href="/newsfeed"
                 aria-label="Our product"
                 title="Our product"
                 className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
