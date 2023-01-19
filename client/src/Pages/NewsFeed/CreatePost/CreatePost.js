@@ -53,7 +53,7 @@ const CreatePost = () => {
       <form className="flex items-center" onSubmit={handleSubmit(handleSub)}>
         <img
           alt=""
-          className="hidden lg:block w-12 h-12 mr-3 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800"
+          className="hidden md:block w-12 h-12 mr-3 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800"
           src="https://source.unsplash.com/40x40/?portrait?1"
         />
         <input
