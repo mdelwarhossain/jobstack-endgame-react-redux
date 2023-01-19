@@ -49,7 +49,7 @@ const CreatePost = () => {
       });
   };
   return (
-    <div className="mx-4 my-10">
+    <div className="mx-2 my-6">
       <form className="flex items-center" onSubmit={handleSubmit(handleSub)}>
         <img
           alt=""
@@ -60,10 +60,10 @@ const CreatePost = () => {
           type="text"
           {...register("caption")}
           placeholder="What's in your mind"
-          className="relative input input-bordered input-info w-full"
+          className="relative input input-bordered input-info w-full input-sm md:input-md"
         />
         <label htmlFor="icon-button-file" className="mx-4">
-          <FaImages className="text-3xl cursor-pointer "></FaImages>
+          <FaImages className="text-sm md:text-3xl cursor-pointer "></FaImages>
         </label>
 
         <input
@@ -74,7 +74,7 @@ const CreatePost = () => {
           type="file"
           style={{ display: "none" }}
         />
-        <input type="submit" value="submit" className="btn btn-primary ml-1" />
+        <input type="submit" value="submit" className="btn btn-primary btn-sm md:btn-md ml-1" />
       </form>
     </div>
   );
