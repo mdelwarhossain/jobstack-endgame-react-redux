@@ -13,6 +13,7 @@ import logo7 from '../../assest/images/logo7.webp'
 import logo8 from '../../assest/images/logo8.png'
 import logo9 from '../../assest/images/logo9.png'
 import logo10 from '../../assest/images/logo10.png'
+import RightSideCard from '../NewsFeed/RightSideCard/RightSideCard';
 
 const Notification = () => {
     return (
@@ -184,8 +185,8 @@ const Notification = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-red-200 hidden md:block col-span-2">
-                <p>rightSidebar</p>
+            <div className="hidden p-1 shadow-xl md:block col-span-2">
+                <RightSideCard></RightSideCard>
             </div>
         </div>
     );
